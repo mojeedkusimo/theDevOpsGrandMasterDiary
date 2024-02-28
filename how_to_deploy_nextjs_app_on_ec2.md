@@ -13,11 +13,14 @@
 ## 1. Launch a virtual server, AWS EC2.
 
 ### Logging into the [AWS Management Console](https://aws.amazon.com/console/), I prefer to do all the setup in the nearest region to me i.e. Africa (Cape Town) af-south-1.
+
 ![region-selection](https://mojeedkusimo-public-asset.s3.af-south-1.amazonaws.com/region-selection.PNG) 
 
-### Then search for EC2 at the top left seach bar ![ec2-search](https://mojeedkusimo-public-asset.s3.af-south-1.amazonaws.com/ec2-search.PNG)
+### Then search for EC2 at the top left seach bar 
+![ec2-search](https://mojeedkusimo-public-asset.s3.af-south-1.amazonaws.com/ec2-search.PNG)
 
-### Then Click on the orange button labelled 'Launch Instance' ![launch-selection](https://mojeedkusimo-public-asset.s3.af-south-1.amazonaws.com/launch-selection.PNG)
+### Then Click on the orange button labelled 'Launch Instance' 
+![launch-selection](https://mojeedkusimo-public-asset.s3.af-south-1.amazonaws.com/launch-selection.PNG)
 
 ### You can give your instance a name for easy identification and leave most of the default selections especially ones marked 'Free tier'
 
@@ -76,22 +79,27 @@
 
 ### 13.246.240.31:3000
 
+ ![link-with-port](https://mojeedkusimo-public-asset.s3.af-south-1.amazonaws.com/link-with-port.PNG)
+
 ### However, this does not look too good for the port to be displayed after the IP. It is much more decent to have just the IP which in most cases is usually maaped to a domain name.
 
 ### This is where nginx comes in. One of the uses of nginx is to act as a reverse proxy such that when a request hits the IP alone, the server is able handle it and route the request to the application running on the server. Installing it is done via below command:
 
-### sudo dnf insatll nginx
+### sudo dnf insatll nginx -y
 
 ### Now, we need to tell the server how we want it to handle traffic by creating a config file ending with .conf e.g server.comf and put at below directory
 
 ### /etc/nginx/conf.d/
 
-### The content should look like ![this](https://mojeedkusimo-public-asset.s3.af-south-1.amazonaws.com/nginx-conf.PNG)
+### The content should look like
+ ![config-file](https://mojeedkusimo-public-asset.s3.af-south-1.amazonaws.com/nginx-conf.PNG)
 
 ### Then start the nginx using this
 
-### sudo sytemctl start nginx
+### sudo systemctl start nginx
 
 ### And viola! The application is accessible directly on the IP
+
+![final-link](https://mojeedkusimo-public-asset.s3.af-south-1.amazonaws.com/final-link.PNG)
 
  
