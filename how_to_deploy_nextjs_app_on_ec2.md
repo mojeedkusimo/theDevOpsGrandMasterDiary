@@ -75,3 +75,23 @@
 ### At this point, we can actually see the application running by simply sopying the public IP - : - port 3000. In my case, that is:
 
 ### 13.246.240.31:3000
+
+### However, this does not look too good for the port to be displayed after the IP. It is much more decent to have just the IP which in most cases is usually maaped to a domain name.
+
+### This is where nginx comes in. One of the uses of nginx is to act as a reverse proxy such that when a request hits the IP alone, the server is able handle it and route the request to the application running on the server. Installing it is done via below command:
+
+### sudo dnf insatll nginx
+
+### Now, we need to tell the server how we want it to handle traffic by creating a config file ending with .conf e.g server.comf and put at below directory
+
+### /etc/nginx/conf.d/
+
+### The content should look like ![this](https://mojeedkusimo-public-asset.s3.af-south-1.amazonaws.com/nginx-conf.PNG)
+
+### Then start the nginx using this
+
+### sudo sytemctl start nginx
+
+### And viola! The application is accessible directly on the IP
+
+ 
